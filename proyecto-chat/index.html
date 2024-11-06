@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Local Privado - MAVI Medical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Chat Local Privado</h1>
+    </header>
+
+    <section id="chat">
+        <h2>Chat</h2>
+        <div id="messages" style="border: 1px solid #000; height: 300px; overflow-y: auto;"></div>
+
+
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MAVI Medical. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Conectar al servidor WebSocket
+        const ws = new WebSocket('ws://localhost:5000');
+    
+        // Obtener elementos del DOM
+        const messageInput = document.getElementById('message-input');
+        const chatForm = document.getElementById('chat-form');
+        const messagesDiv = document.getElementById('messages');
+    
+        // Cuando se recibe un mensaje del servidor, mostrarlo en la caja de chat
+        ws.onmessage = function(event) {
+            const message = document.createElement('p');
+            message.textContent = event.data;  // El contenido del mensaje recibido
+            messagesDiv.appendChild(message);  // Agregar el mensaje al div
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;  // Desplazar el scroll al final
+        };
+    
+        // Enviar el mensaje al servidor cuando se envía el formulario
+        chatForm.onsubmit = function(event) {
+            event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
+            const message = messageInput.value;  // Obtener el mensaje escrito
+            ws.send(message);  // Enviar el mensaje al servidor WebSocket
+            messageInput.value = '';  // Limpiar el campo de entrada
+        };
+    </script>
+    
+</body>
+</html>
