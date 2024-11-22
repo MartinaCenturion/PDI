@@ -1,12 +1,20 @@
 Documentación del Proyecto: Chat Local con Notificación de Ayuda
+
 Descripción del Proyecto
-El proyecto es una aplicación de chat local diseñada con Python y la biblioteca Tkinter para la interfaz gráfica. Los usuarios pueden conectarse a un servidor en una red local, enviar mensajes entre ellos y usar un botón especial para enviar una notificación de "Ayuda" a todos los participantes del chat.
+
+El proyecto es una aplicación de chat local diseñada con Python y la biblioteca Tkinter para la interfaz gráfica.
+Los usuarios pueden conectarse a un servidor en una red local, enviar mensajes entre ellos y usar un botón especial para enviar una notificación de "Ayuda" a todos los participantes del chat.
 
 Características Principales
+
 Chat en tiempo real: Los mensajes enviados se transmiten a todos los usuarios conectados al servidor.
+
 Notificación de ayuda: Un botón permite a los usuarios enviar un mensaje especial indicando que necesitan ayuda.
+
 Interfaz: Diseñada con Tkinter, incluye un área de mensajes desplazable, entrada de texto y botones de acción.
+
 Múltiples usuarios: Soporta múltiples conexiones simultáneas en la misma red local.
+
 Requisitos del Sistema
 -Python 3.8 o superior.
 Librerías necesarias:
