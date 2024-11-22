@@ -92,37 +92,59 @@ from tkinter import scrolledtext
 
 # Funcionalidades principales de cliente
 # Se manejan conexión, recepción, y envío de mensajes
-Archivo servidor.py
+Archivo: servidor.py
+
 python
+
 Copiar código
+
 import socket
+
 import threading
 
 # Servidor escucha nuevas conexiones y gestiona mensajes
 # Difunde mensajes a todos los clientes conectados
+
 Archivo config.ini
+
 ini
+
 Copiar código
 [Servidor]
 IP = 127.0.0.1
 Puerto = 5000
-Uso de la Aplicación
+
+# Uso de la Aplicación
 Ejecuta primero el servidor en la computadora anfitriona.
+
 Inicia el cliente en otras computadoras de la misma red.
+
 Usa el campo de entrada para enviar mensajes o el botón "Pedir ayuda" para notificaciones.
+
 Mensajes Especiales
 Notificación de ayuda: Cuando un usuario presiona el botón "Pedir ayuda", el mensaje:
 php
+
 Copiar código
+
 <Apodo> necesita ayuda.
+
 se envía automáticamente a todos los usuarios conectados.
-Solución de Problemas
+
+# Solución de Problemas
+
 El cliente no se conecta al servidor:
+
 Verifica que el servidor esté ejecutándose.
+
 Asegúrate de que la dirección IP y el puerto coincidan con los de config.ini.
+
 No se reciben mensajes:
-Comprueba la conexión de red local.
-Revisa si el firewall está bloqueando las conexiones.
-Archivos de Ayuda
+-Comprueba la conexión de red local.
+-Revisa si el firewall está bloqueando las conexiones.
+-Archivos de Ayuda
+
+
+
 README.md: Incluye esta documentación.
 config.ini: Permite personalizar la configuración del servidor.
