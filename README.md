@@ -16,28 +16,46 @@ Interfaz: Diseñada con Tkinter, incluye un área de mensajes desplazable, entra
 Múltiples usuarios: Soporta múltiples conexiones simultáneas en la misma red local.
 
 Requisitos del Sistema
+
 -Python 3.8 o superior.
+
 Librerías necesarias:
+
 -socket
+
 -threading
+
 -tkinter (incluida con Python por defecto).
-Configuración de red local: La aplicación debe ejecutarse en la misma red para que clientes y servidor puedan comunicarse.
+
+Configuración de red local:
+La aplicación debe ejecutarse en la misma red para que clientes y servidor puedan comunicarse.
+
 Estructura del Proyecto
 Cliente:
 Archivo: cliente.py
+
 Funciones principales:
-receive(): Escucha mensajes del servidor.
-write(): Envía mensajes al servidor.
-notify_help(): Envía una notificación de ayuda al servidor.
+
+-receive(): Escucha mensajes del servidor.
+-write(): Envía mensajes al servidor.
+-notify_help(): Envía una notificación de ayuda al servidor.
+
 Servidor:
 Archivo: servidor.py
+
 Funciones principales:
-broadcast(message): Transmite mensajes a todos los clientes conectados.
-handle_client(client): Maneja mensajes y desconexiones de clientes.
-receive(): Acepta nuevas conexiones de clientes.
+
+-broadcast(message): Transmite mensajes a todos los clientes conectados.
+
+-handle_client(client): Maneja mensajes y desconexiones de clientes.
+
+-receive(): Acepta nuevas conexiones de clientes.
+
 Archivo de Configuración:
 Archivo: config.ini
+
 Propósito: Contiene la dirección IP y el puerto del servidor.
+
 Instrucciones de Instalación
 Clonar o descargar el proyecto. Descarga todos los archivos (cliente.py, servidor.py, config.ini) y colócalos en una carpeta.
 
